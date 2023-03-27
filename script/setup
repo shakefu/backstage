@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+# if .env file does not exist, create it and add github token
+
+if [ ! -f .env ]; then
+  # read github token from user
+  read -s -p "github_token:" github_token
+  echo "GITHUB_TOKEN=${github_token}" >> .env
+fi
